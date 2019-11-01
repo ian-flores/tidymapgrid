@@ -1,5 +1,5 @@
 Package: tidymapgrid
-Title: Package to produce grids of geographical areas.
+Title: Package to produce grids of geographical areas
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Ian",
@@ -8,7 +8,11 @@ Authors@R:
            email = "ian.flores@audassimus.com",
            comment = c(ORCID = "0000-0002-7573-0708"))
 Description: Produces grids based on maps.
-License: GPL-3
+License: MIT + file LICENSE
+Imports:
+    dplyr,
+    sf,
+    geogrid
 Suggests: 
     testthat,
     covr
