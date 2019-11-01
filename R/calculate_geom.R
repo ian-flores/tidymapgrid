@@ -4,6 +4,7 @@
 #' @param type The type of grid to generate (square or hexagonal)
 #' @param seed The seed to generate the grid
 #' @return The grid generated
+#' @keywords internal
 
 calculate_geom <- function(file, type, seed){
   if (type == 'square'){type = 'regular'} else {type}
