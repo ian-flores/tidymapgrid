@@ -1,12 +1,11 @@
 #' Function to get the corresponding grid for a map
 #'
-#' @param file_path The filepath of the file to be loaded. Can be relative or absolute, but relative is recommended.
+#' @param file The file to be loaded. Comes from st_read() function.
 #' @param type The type of grid to generate (square or hexagonal)
 #' @param seed The seed to generate the grid
 #' @return The grid generated
 #' @export
-get_grid <- function(file_path, type = 'hexagonal', seed = 2019){
-file <- sf::st_read(file_path)
+get_grid <- function(file, type = 'hexagonal', seed = 2019){
 
 geom <- calculate_geom(file, type = type, seed = seed)
 geom_df <- tidy_geom(geom)

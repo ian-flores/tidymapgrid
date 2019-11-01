@@ -31,13 +31,15 @@ devtools::install_github('ian-flores/tidymapgrid')
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
+library(sf)
 library(tidymapgrid)
 library(ggplot2)
-## basic example code
+```
 
+``` r
 json_url <- 'https://raw.githubusercontent.com/ian-flores/Hurricane_Maria_Mortality_Analysis/master/analysis/data/pueblos.json'
 
-grid <- get_grid(json_url, seed = 40)
+pueblos <- st_read(json_url)
 #> Reading layer `pueblos' from data source `https://raw.githubusercontent.com/ian-flores/Hurricane_Maria_Mortality_Analysis/master/analysis/data/pueblos.json' using driver `GeoJSON'
 #> Simple feature collection with 78 features and 3 fields
 #> geometry type:  POLYGON
@@ -46,8 +48,17 @@ grid <- get_grid(json_url, seed = 40)
 #> epsg (SRID):    4326
 #> proj4string:    +proj=longlat +datum=WGS84 +no_defs
 
+ggplot(pueblos) +
+  geom_sf()
+```
+
+<img src="man/figures/README-reg-ggplot-1.png" width="100%" />
+
+``` r
+grid <- get_grid(pueblos, type = 'hexagonal', seed = 40)
+
 ggplot(grid) +
   geom_sf()
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-get_grid-1.png" width="100%" />

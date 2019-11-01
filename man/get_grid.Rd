@@ -4,10 +4,10 @@
 \alias{get_grid}
 \title{Function to get the corresponding grid for a map}
 \usage{
-get_grid(file_path, type = "hexagonal", seed = 2019)
+get_grid(file, type = "hexagonal", seed = 2019)
 }
 \arguments{
-\item{file_path}{The filepath of the file to be loaded. Can be relative or absolute, but relative is recommended.}
+\item{file}{The file to be loaded. Comes from st_read() function.}
 
 \item{type}{The type of grid to generate (square or hexagonal)}
 
