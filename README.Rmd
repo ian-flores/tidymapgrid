@@ -43,7 +43,7 @@ library(ggplot2)
 
 json_url <- 'https://raw.githubusercontent.com/ian-flores/Hurricane_Maria_Mortality_Analysis/master/analysis/data/pueblos.json'
 
-grid <- get_grid(json_url)
+grid <- get_grid(json_url, seed = 40)
 
 ggplot(grid) +
   geom_sf()
