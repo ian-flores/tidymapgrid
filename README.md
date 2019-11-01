@@ -28,7 +28,8 @@ devtools::install_github('ian-flores/tidymapgrid')
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to obtain the grid for your
+map.
 
 ``` r
 library(sf)
@@ -49,7 +50,8 @@ pueblos <- st_read(json_url)
 #> proj4string:    +proj=longlat +datum=WGS84 +no_defs
 
 ggplot(pueblos) +
-  geom_sf()
+  geom_sf() +
+  theme_void()
 ```
 
 <img src="man/figures/README-reg-ggplot-1.png" width="100%" />
@@ -58,7 +60,8 @@ ggplot(pueblos) +
 grid <- get_grid(pueblos, type = 'hexagonal', seed = 40)
 
 ggplot(grid) +
-  geom_sf()
+  geom_sf() +
+  theme_void()
 ```
 
 <img src="man/figures/README-get_grid-1.png" width="100%" />

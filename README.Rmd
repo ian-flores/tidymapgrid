@@ -48,12 +48,14 @@ json_url <- 'https://raw.githubusercontent.com/ian-flores/Hurricane_Maria_Mortal
 pueblos <- st_read(json_url)
 
 ggplot(pueblos) +
-  geom_sf()
+  geom_sf() +
+  theme_void()
 ```
 
 ```{r get_grid, warning=FALSE, message=FALSE}
 grid <- get_grid(pueblos, type = 'hexagonal', seed = 40)
 
 ggplot(grid) +
-  geom_sf()
+  geom_sf() +
+  theme_void()
 ```
