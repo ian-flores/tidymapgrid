@@ -18,11 +18,13 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/tidymapgrid)](https://CRAN.R-project.org/package=tidymapgrid)
-[![Travis build status](https://travis-ci.org/ian-flores/tidymapgrid.svg?branch=master)](https://travis-ci.org/ian-flores/tidymapgrid)
-[![Codecov test coverage](https://codecov.io/gh/ian-flores/tidymapgrid/branch/master/graph/badge.svg)](https://codecov.io/gh/ian-flores/tidymapgrid?branch=master)
+[![R-CMD-check](https://github.com/ian-flores/tidymapgrid/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ian-flores/tidymapgrid/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/ian-flores/tidymapgrid/branch/main/graph/badge.svg)](https://codecov.io/gh/ian-flores/tidymapgrid?branch=main)
 <!-- badges: end -->
 
-The goal of tidymapgrid is to ...
+tidymapgrid provides a simple interface for converting geographic polygons into grid representations (hexagonal or square). This is useful for creating tile grid maps where each geographic unit is represented by a uniformly-sized cell, making it easier to visualize data without the distortion caused by varying polygon sizes.
+
+The package wraps the [geogrid](https://github.com/jbaileyh/geogrid) package and returns tidy sf objects that integrate seamlessly with the tidyverse and ggplot2.
 
 ## Installation
 

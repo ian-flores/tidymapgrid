@@ -1,4 +1,24 @@
-destination: docs
+url: https://ian-flores.github.io/tidymapgrid/
+
 template:
-  params:
-    bootswatch: minty
+  bootstrap: 5
+  bootswatch: minty
+
+navbar:
+  structure:
+    left:  [intro, reference, articles, news]
+    right: [search, github]
+  components:
+    github:
+      icon: fa-github
+      href: https://github.com/ian-flores/tidymapgrid
+
+reference:
+- title: Main Functions
+  contents:
+  - get_grid
+
+articles:
+- title: Getting Started
+  contents:
+  - getting-started

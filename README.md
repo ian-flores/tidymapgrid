@@ -4,18 +4,15 @@
 # tidymapgrid
 
 <!-- badges: start -->
-
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/tidymapgrid)](https://CRAN.R-project.org/package=tidymapgrid)
-[![Travis build
-status](https://travis-ci.org/ian-flores/tidymapgrid.svg?branch=master)](https://travis-ci.org/ian-flores/tidymapgrid)
-[![Codecov test
-coverage](https://codecov.io/gh/ian-flores/tidymapgrid/branch/master/graph/badge.svg)](https://codecov.io/gh/ian-flores/tidymapgrid?branch=master)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![CRAN status](https://www.r-pkg.org/badges/version/tidymapgrid)](https://CRAN.R-project.org/package=tidymapgrid)
+[![R-CMD-check](https://github.com/ian-flores/tidymapgrid/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ian-flores/tidymapgrid/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/ian-flores/tidymapgrid/branch/main/graph/badge.svg)](https://codecov.io/gh/ian-flores/tidymapgrid?branch=main)
 <!-- badges: end -->
 
-The goal of tidymapgrid is to …
+tidymapgrid provides a simple interface for converting geographic polygons into grid representations (hexagonal or square). This is useful for creating tile grid maps where each geographic unit is represented by a uniformly-sized cell, making it easier to visualize data without the distortion caused by varying polygon sizes.
+
+The package wraps the [geogrid](https://github.com/jbaileyh/geogrid) package and returns tidy sf objects that integrate seamlessly with the tidyverse and ggplot2.
 
 ## Installation
 
@@ -46,8 +43,7 @@ pueblos <- st_read(json_url)
 #> geometry type:  POLYGON
 #> dimension:      XY
 #> bbox:           xmin: -67.27135 ymin: 17.92688 xmax: -65.24442 ymax: 18.51576
-#> epsg (SRID):    4326
-#> proj4string:    +proj=longlat +datum=WGS84 +no_defs
+#> CRS:            EPSG:4326
 
 ggplot(pueblos) +
   geom_sf() +
@@ -65,3 +61,15 @@ ggplot(grid) +
 ```
 
 <img src="man/figures/README-get_grid-1.png" width="100%" />
+
+## Features
+
+- Convert geographic polygons to **hexagonal** or **square** grid representations
+- Preserves all attributes from the original sf object
+- Returns tidy sf objects compatible with dplyr and ggplot2
+- Reproducible results via seed parameter
+
+## Learn More
+
+- Check out the [Getting Started vignette](https://ian-flores.github.io/tidymapgrid/articles/getting-started.html) for a detailed tutorial
+- See the [function reference](https://ian-flores.github.io/tidymapgrid/reference/index.html) for API documentation
