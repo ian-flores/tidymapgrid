@@ -11,7 +11,7 @@
 #'   (default) or "square".
 #' @param seed An integer seed for reproducible grid generation. The same seed
 #'   will produce the same grid layout.
-#' @return A tibble with sf geometry containing the grid representation.
+#' @return An sf data frame containing the grid representation.
 #'   Original attributes from the input are preserved.
 #' @export
 #' @examples

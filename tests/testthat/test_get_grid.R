@@ -4,20 +4,20 @@ library(sf)
 pueblos <- readRDS(test_path("pueblos.RDS"))
 
 # Test basic functionality
-test_that("get_grid returns sf tibble for hexagonal type", {
+test_that("get_grid returns sf object for hexagonal type", {
   result <- get_grid(pueblos, type = "hexagonal", seed = 1)
 
   expect_s3_class(result, "sf")
-  expect_s3_class(result, "tbl_df")
+  expect_s3_class(result, "data.frame")
   expect_true("geometry" %in% names(result))
   expect_equal(nrow(result), nrow(pueblos))
 })
 
-test_that("get_grid returns sf tibble for square type", {
+test_that("get_grid returns sf object for square type", {
   result <- get_grid(pueblos, type = "square", seed = 1)
 
   expect_s3_class(result, "sf")
-  expect_s3_class(result, "tbl_df")
+  expect_s3_class(result, "data.frame")
   expect_true("geometry" %in% names(result))
   expect_equal(nrow(result), nrow(pueblos))
 })
