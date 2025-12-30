@@ -52,16 +52,12 @@ library(ggplot2)
 ### Loading geographic data
 
 First, load your geographic data as an `sf` object. For this example, we'll
-use a sample dataset of Puerto Rico municipalities:
+use a sample dataset of Puerto Rico municipalities that comes bundled with
+the package:
 
 ```{r load-data, message=FALSE, warning=FALSE}
-# Load sample data from GitHub
-json_url <- paste0(
-  "https://raw.githubusercontent.com/ian-flores/",
-  "Hurricane_Maria_Mortality_Analysis/master/analysis/data/pueblos.json"
-)
-
-pueblos <- st_read(json_url, quiet = TRUE)
+# Load sample data bundled with the package
+pueblos <- readRDS(system.file("extdata", "pueblos.RDS", package = "tidymapgrid"))
 
 # View original map
 ggplot(pueblos) +
